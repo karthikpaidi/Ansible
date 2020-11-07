@@ -15,16 +15,8 @@
     community.general.homebrew:
       name: helm
       state: present
-  - name: download gcloud macos 64 bit 
-    get_url:
-      url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-317.0.0-darwin-x86_64.tar.gz
-      dest: /tmp
-      checksum: sha256:3873c60474754192371d4b7d801848d148da620640721c08b757644b47daab4c
-  - name : install tar utility 
+  - name: install gcloud utility
     community.general.homebrew:
-      name: gnu-tar 
-      state: present 
-  - name : extract tar 
-    unarchive:
-      src: /tmp/google-cloud-sdk-317.0.0-darwin-x86_64.tar.gz
-      dest: /tmp
+      name: google-cloud-sdk
+      state: present
+ 
